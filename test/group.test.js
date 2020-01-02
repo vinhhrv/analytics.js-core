@@ -246,10 +246,10 @@ describe('group', function() {
         option: true,
         persist: true,
         cookie: {
-          key: 'ajs_group_id'
+          key: 'hrv_ajs_group_id'
         },
         localStorage: {
-          key: 'ajs_group_properties'
+          key: 'hrv_ajs_group_properties'
         }
       });
     });
