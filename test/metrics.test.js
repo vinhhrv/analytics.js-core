@@ -60,7 +60,7 @@ describe('metrics', function() {
 
       sinon.assert.calledOnce(spy);
       var req = spy.getCall(0).args[0];
-      assert.strictEqual(req.url, 'https://api.segment.io/v1/m');
+      assert.strictEqual(req.url, 'https://stats.hstatic.net/v1/m');
       assert.strictEqual(
         req.requestBody,
         '{"series":[{"type":"Counter","metric":"foo","value":1,"tags":{}}]}'
@@ -77,7 +77,7 @@ describe('metrics', function() {
 
       sinon.assert.calledOnce(spy);
       var req = spy.getCall(0).args[0];
-      assert.strictEqual(req.url, 'https://api.segment.io/v1/m');
+      assert.strictEqual(req.url, 'https://stats.hstatic.net/v1/m');
       assert.strictEqual(
         req.requestBody,
         '{"series":[{"type":"Counter","metric":"test1","value":1,"tags":{"foo":"bar"}},{"type":"Counter","metric":"test2","value":1,"tags":{}}]}'
@@ -148,7 +148,7 @@ describe('metrics', function() {
       setTimeout(function() {
         sinon.assert.calledOnce(spy);
         var req = spy.getCall(0).args[0];
-        assert.strictEqual(req.url, 'https://api.segment.io/v1/m');
+        assert.strictEqual(req.url, 'https://stats.hstatic.net/v1/m');
         assert.strictEqual(
           req.requestBody,
           '{"series":[{"type":"Counter","metric":"test1","value":1,"tags":{"foo":"bar"}}]}'
@@ -165,7 +165,7 @@ describe('metrics', function() {
     it('should handle empty options correctly', function() {
       metrics.options({});
 
-      assert.equal(metrics.host, 'api.segment.io/v1');
+      assert.equal(metrics.host, 'stats.hstatic.net/v1');
       assert.equal(metrics.sampleRate, 0);
       assert.equal(metrics.flushTimer, 30000);
       assert.equal(metrics.maxQueueSize, 20);
